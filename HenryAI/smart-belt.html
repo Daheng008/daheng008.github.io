@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能腰带 - 寰宇神游</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="smart-belt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=38597448f9088791a692a019316becf7"></script>
+</head>
+<body class="tech-theme">
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">寰宇神游</a>
+            <a href="vr-travel.html">VR之门</a>
+            <a href="travel-companion.html">旅游智伴</a>
+            <a href="#" class="active">智能腰带</a>
+            <a href="about.html">关于我们</a>
+        </div>
+    </nav>
+
+    <!-- 3D腰带展示区 -->
+    <div class="product-showcase">
+        <div id="belt-model"></div>
+        <div class="product-features">
+            <div class="feature">
+                <i class="fas fa-ruler"></i>
+                <h3>精准测量</h3>
+                <p>毫米级腰围监测</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-clock"></i>
+                <h3>实时监控</h3>
+                <p>24小时健康追踪</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>智能连接</h3>
+                <p>APP数据同步</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 健康数据面板 -->
+    <div class="health-dashboard">
+        <div class="data-panel">
+            <div class="health-analysis">
+                <h3>健康分析报告</h3>
+                <div class="analysis-content">
+                    <div class="analysis-item">
+                        <i class="fas fa-apple-alt"></i>
+                        <div class="analysis-text">
+                            <h4>饮食建议</h4>
+                            <p id="diet-advice">加载中...</p>
+                        </div>
+                    </div>
+                    <div class="analysis-item">
+                        <i class="fas fa-running"></i>
+                        <div class="analysis-text">
+                            <h4>运动建议</h4>
+                            <p id="exercise-advice">加载中...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 嵌入式追踪器 -->
+        <div class="embedded-tracker">
+            <h3>实时健康追踪</h3>
+            <div class="tracker-container">
+                <iframe 
+                    id="mindful-tracker"
+                    src="https://preview--mindful-belt-tracker.lovable.app/"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="tracker-controls">
+                <button id="sync-data" class="sync-button">
+                    <i class="fas fa-sync"></i>
+                    同步数据
+                </button>
+                <div class="last-sync">上次同步: <span id="last-sync-time">-</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 交互问答区 -->
+    <div class="qa-section">
+        <div class="qa-container">
+            <h3>常见问题</h3>
+            <div class="qa-list">
+                <div class="qa-item">
+                    <div class="question">
+                        <span>腰带如何充电？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="answer">
+                        使用标配的磁吸充电线，将充电接口对准腰带背面的充电点即可自动吸附充电。充满电需要约2小时，可持续使用7天。
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="question">
+                        <span>数据如何同步到手机？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="answer">
+                        下载我们的APP，打开蓝牙后即可自动连接同步数据。支持iOS和Android系统。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 购买区域 -->
+    <div class="purchase-section">
+        <div class="price-card">
+            <h2>智能腰带 Pro</h2>
+            <div class="price">¥299</div>
+            <ul class="features-list">
+                <li><i class="fas fa-check"></i> 精准腰围监测</li>
+                <li><i class="fas fa-check"></i> 智能数据分析</li>
+                <li><i class="fas fa-check"></i> APP实时同步</li>
+                <li><i class="fas fa-check"></i> 7天续航</li>
+            </ul>
+            <button class="buy-now">立即购买</button>
+            <p class="guarantee">30天无理由退换 | 1年质保</p>
+        </div>
+    </div>
+
+    <script src="smart-belt.js"></script>
+</body>
+</html> 

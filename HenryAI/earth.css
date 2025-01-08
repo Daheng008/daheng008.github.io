@@ -1,0 +1,191 @@
+.space-theme {
+    background: linear-gradient(to bottom, #0B1026 0%, #1B2735 50%, #090A0F 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.earth-container {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    margin-top: 60px;
+}
+
+#globeViz {
+    width: 100%;
+    height: 100%;
+}
+
+.location-info {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    max-width: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.location-info:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-50%) scale(1.02);
+}
+
+.location-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #4FACFE;
+    text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+.location-description {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.location-attractions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.attraction {
+    background: rgba(79, 172, 254, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.attraction:hover {
+    background: rgba(79, 172, 254, 0.2);
+    transform: translateX(5px);
+}
+
+.vr-products {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(79, 172, 254, 0.2);
+    border-color: rgba(79, 172, 254, 0.3);
+}
+
+.product-model {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.product-info {
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.product-info h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #4FACFE;
+    text-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+.specs {
+    list-style: none;
+    padding: 0;
+}
+
+.specs li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.specs li:hover {
+    background: rgba(79, 172, 254, 0.1);
+    transform: translateX(5px);
+}
+
+.guide-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+/* 星星动画 */
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.2; transform: scale(1); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .vr-products {
+        padding: 20px;
+    }
+
+    .product-card {
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+    }
+
+    .product-model {
+        height: 200px;
+    }
+
+    .location-info {
+        right: 10px;
+        left: 10px;
+        transform: translateY(-50%);
+        max-width: none;
+    }
+} 

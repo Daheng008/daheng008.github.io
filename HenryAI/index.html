@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寰宇神游</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="earth.css">
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/three-globe"></script>
+    <script src="https://unpkg.com/three/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body class="space-theme">
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="active">寰宇神游</a>
+            <a href="vr-travel.html">VR之门</a>
+            <a href="travel-companion.html">旅游智伴</a>
+            <a href="smart-belt.html">智能腰带</a>
+            <a href="about.html">关于我们</a>
+        </div>
+    </nav>
+
+    <div class="guide-stars"></div>
+
+    <div class="earth-container">
+        <div id="globeViz"></div>
+        <div class="location-info" style="opacity: 0;"></div>
+    </div>
+
+    <div class="vr-products">
+        <div class="product-card">
+            <div class="product-model">
+                <img src="images/vr/headset.jpg" alt="VR头显">
+            </div>
+            <div class="product-info">
+                <h3>VR头显</h3>
+                <ul class="specs">
+                    <li>4K超高清分辨率</li>
+                    <li>120Hz刷新率</li>
+                    <li>无线设计</li>
+                    <li>6DoF空间定位</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-model">
+                <img src="images/vr/controller.jpg" alt="手柄控制器">
+            </div>
+            <div class="product-info">
+                <h3>手柄控制器</h3>
+                <ul class="specs">
+                    <li>精准动作追踪</li>
+                    <li>触觉反馈</li>
+                    <li>长续航设计</li>
+                    <li>人体工学握持</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="earth.js"></script>
+</body>
+</html> 

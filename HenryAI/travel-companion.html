@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游智伴 - 寰宇神游</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="travel-companion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Live2D 依赖 -->
+    <script src="https://cdn.jsdelivr.net/npm/pixi.js@5.3.3/dist/pixi.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/index.min.js"></script>
+    <!-- 高德地图API -->
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: '2c53a0c3c9b2c3c5c3c5c3c5c3c5c3c5',
+        }
+    </script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=38597448f9088791a692a019316becf7"></script>
+    <!-- 高德地图UI组件库 -->
+    <script type="text/javascript" src="https://webapi.amap.com/ui/1.1/main.js"></script>
+    <!-- 高德地图插件 -->
+    <script type="text/javascript" src="https://webapi.amap.com/maps/plugin?v=2.0&plugins=AMap.Scale,AMap.ToolBar,AMap.HawkEye,AMap.MapType,AMap.Geocoder,AMap.PlaceSearch,AMap.AutoComplete,AMap.Driving"></script>
+    <script src="guide-api.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">寰宇神游</a>
+            <a href="vr-travel.html">VR之门</a>
+            <a href="#" class="active">旅游智伴</a>
+            <a href="smart-belt.html">智能腰带</a>
+            <a href="about.html">关于我们</a>
+        </div>
+    </nav>
+
+    <!-- 数字人导游舞台 -->
+    <div class="digital-guide-stage">
+        <div class="stage-background"></div>
+        <div class="digital-guide">
+            <canvas id="live2d-canvas"></canvas>
+            <div class="guide-speech-bubble">
+                <p id="guide-message">你好！我是你的专属导游小悦，很高兴为你介绍当地的精彩景点。</p>
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 景点推荐区域 -->
+    <div class="attractions-container">
+        <div class="current-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="location-text">正在获取位置...</span>
+        </div>
+        <div id="map-container"></div>
+        <div class="attractions-grid">
+            <!-- 景点卡片将通过JavaScript动态生成 -->
+        </div>
+    </div>
+
+    <!-- 对话交互区域 -->
+    <div class="chat-container">
+        <div class="chat-history">
+            <!-- 对话历史将通过JavaScript动态添加 -->
+        </div>
+        <div class="chat-input-container">
+            <textarea 
+                class="chat-input" 
+                placeholder="输入你想了解的景点信息..."
+                rows="1"
+            ></textarea>
+            <button class="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 功能按钮区 -->
+    <div class="function-buttons">
+        <button class="function-btn city-switch">
+            <i class="fas fa-city"></i>
+            切换城市
+        </button>
+        <button class="function-btn favorites">
+            <i class="fas fa-heart"></i>
+            收藏景点
+        </button>
+        <button class="function-btn settings">
+            <i class="fas fa-cog"></i>
+            设置
+        </button>
+    </div>
+
+    <!-- 城市选择弹窗 -->
+    <div class="city-modal" style="display: none;">
+        <div class="modal-content">
+            <h3>选择城市</h3>
+            <input type="text" placeholder="搜索城市..." class="city-search">
+            <div class="city-list">
+                <!-- 城市列表将通过JavaScript动态生成 -->
+            </div>
+            <button class="modal-close">关闭</button>
+        </div>
+    </div>
+
+    <!-- 收藏夹弹窗 -->
+    <div class="favorites-modal" style="display: none;">
+        <div class="modal-content">
+            <h3>我的收藏</h3>
+            <div class="favorites-list">
+                <!-- 收藏列表将通过JavaScript动态生成 -->
+            </div>
+            <button class="modal-close">关闭</button>
+        </div>
+    </div>
+
+    <script src="travel-companion.js"></script>
+</body>
+</html> 

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 寰宇神游</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Swiper.js for carousel -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">寰宇神游</a>
+            <a href="vr-travel.html">VR之门</a>
+            <a href="travel-companion.html">旅游智伴</a>
+            <a href="smart-belt.html">智能腰带</a>
+            <a href="#" class="active">关于我们</a>
+        </div>
+    </nav>
+
+    <!-- 主要内容区 -->
+    <main class="about-container">
+        <!-- 照片轮播区 -->
+        <section class="carousel-section">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/about/slide1.jpeg" alt="公司照片1">
+                        <div class="slide-caption">我们的办公环境</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/about/slide2.jpg" alt="公司照片2">
+                        <div class="slide-caption">研发团队</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/about/slide3.jpg" alt="公司照片3">
+                        <div class="slide-caption">产品展示</div>
+                    </div>
+                </div>
+                <!-- 添加分页器 -->
+                <div class="swiper-pagination"></div>
+                <!-- 添加导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <!-- 公司介绍 -->
+        <section class="company-intro">
+            <h2>关于寰宇神游</h2>
+            <p class="intro-text">
+                寰宇神游是一家致力于将先进科技与旅游体验相结合的创新型科技公司。
+                我们的使命是通过智能设备和数字化解决方案，为用户提供更便捷、更智能、更有趣的旅行体验。
+            </p>
+            <div class="features">
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <h3>全球视野</h3>
+                    <p>连接世界各地的旅游资源，打造无界旅行体验</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <h3>科技创新</h3>
+                    <p>运用AI技术，为旅行者提供智能化服务</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <h3>用户至上</h3>
+                    <p>以用户需求为核心，持续优化产品体验</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 团队介绍 -->
+        <section class="team-section">
+            <h2>我们的团队</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/team/member1.jpg" alt="团队成员1">
+                    <h3>张恒</h3>
+                    <p>创始人 & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team/member2.jpg" alt="团队成员2">
+                    <h3>李四</h3>
+                    <p>技术总监</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team/member3.jpg" alt="团队成员3">
+                    <h3>王五</h3>
+                    <p>产品经理</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 分隔线 -->
+    <div class="separator"></div>
+
+    <!-- AI对话界面 -->
+    <section class="chat-interface">
+        <div class="chat-section-container">
+            <div class="chat-container">
+                <div class="chat-history" id="chatHistory">
+                    <!-- 示例消息 -->
+                    <div class="message user-message">
+                        <div class="message-content">
+                            你好，我想了解更多关于寰宇神游的信息。
+                        </div>
+                    </div>
+                    <div class="message ai-message">
+                        <div class="message-content">
+                            你好！我是寰宇神游的AI助手。我们是一家专注于将科技与旅游相结合的创新企业。我可以为你介绍我们的产品、服务或者其他你感兴趣的方面。请告诉我你想了解什么？
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <div class="input-container">
+                        <div class="media-upload-buttons">
+                            <label for="imageUpload" class="upload-button" title="上传图片">
+                                <i class="fas fa-image"></i>
+                                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                            </label>
+                            <label for="audioUpload" class="upload-button" title="上传音频">
+                                <i class="fas fa-music"></i>
+                                <input type="file" id="audioUpload" accept="audio/*" style="display: none;">
+                            </label>
+                            <button class="voice-input-button" id="voiceInput" title="语音输入">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            <div class="voice-input-status">正在录音...</div>
+                        </div>
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="在这里输入你的消息..." 
+                            rows="2"
+                            class="message-input"
+                        ></textarea>
+                        <button class="send-button" id="sendMessage" title="发送">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div id="mediaPreview" class="media-preview"></div>
+                </div>
+            </div>
+            <div class="tell-image-container">
+                <img src="images/about/tell.jpg" alt="Tell Image" class="tell-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- 分隔线 -->
+    <div class="separator"></div>
+
+    <!-- 底部社交媒体链接 -->
+    <footer class="social-footer">
+        <div class="social-links">
+            <a href="#" class="social-link wechat">
+                <i class="fab fa-weixin"></i>
+                <span>微信</span>
+            </a>
+            <a href="#" class="social-link weibo">
+                <i class="fab fa-weibo"></i>
+                <span>微博</span>
+            </a>
+            <a href="#" class="social-link douyin">
+                <i class="fab fa-tiktok"></i>
+                <span>抖音</span>
+            </a>
+            <a href="#" class="social-link linkedin">
+                <i class="fab fa-linkedin"></i>
+                <span>领英</span>
+            </a>
+        </div>
+        <div class="contact-info">
+            <p>联系我们：contact@globaltraveltech.com</p>
+            <p>地址：北京市海淀区科技园区</p>
+        </div>
+        <p>&copy; 2024 寰宇神游 版权所有</p>
+    </footer>
+
+    <script src="about.js"></script>
+</body>
+</html> 

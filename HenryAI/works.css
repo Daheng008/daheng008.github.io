@@ -1,0 +1,93 @@
+/* 视频播放区域样式 */
+.video-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto 2rem;
+    display: flex;
+    gap: 2rem;
+    min-height: 600px;
+}
+
+.video-player {
+    flex: 2;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#mvPlayer {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+/* 播放列表样式 */
+.playlist {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.playlist h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+.playlist-items {
+    overflow-y: auto;
+    max-height: calc(100% - 60px);
+}
+
+.playlist-item {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: #f8f8f8;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.playlist-item:hover {
+    background: #eef3ff;
+}
+
+.playlist-item.active {
+    background: #007AFF;
+    color: white;
+}
+
+.playlist-item i {
+    font-size: 1.2rem;
+}
+
+/* 滚动条样式 */
+.playlist-items::-webkit-scrollbar {
+    width: 6px;
+}
+
+.playlist-items::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.playlist-items::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+    }
+    
+    .video-player {
+        height: 300px;
+    }
+} 
